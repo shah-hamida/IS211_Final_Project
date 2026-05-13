@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Books Catalogue</title>
 </head>
 <body>
+    <h1>Book Catalogue</h1>
+<form method = "POST">
+    ISBN:
+    <input type="text" name="isbn">
+    <button type="submit">Search Book</button>
+</form>
+<hr>
+{% for book in books %}
+
+<h3>{{book[1] }}</h3>
+<p>Author: {{book[2] }}</p>
+<p>Pages: {{ book[3] }}</p>
+<p>Rating: {{ book[4] }}</p>
+<p>ISBN: {{ book[5] }}</p>
+
+<a href="/delete/{{ book[0] }}">Delete</a>
+<hr>
+{% endfor %}
+
+{% if error %}
+<p>{{ error}}</p>
+{% endif%}
+
 
 </body>
 </html>

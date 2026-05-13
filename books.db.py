@@ -1,5 +1,5 @@
 import sqlite3
-conn = sqlite3.connect('books.db')
+conn = sqlite3.connect("books.db")
 cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE books (
@@ -7,7 +7,7 @@ CREATE TABLE books (
     isbn TEXT,
     title TEXT,
     author TEXT,
-    page INTEGER,
+    pages INTEGER,
     rating REAL
 )
 """)
