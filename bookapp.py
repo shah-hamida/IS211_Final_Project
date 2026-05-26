@@ -36,7 +36,7 @@ def books():
 
     if request.method == "POST":
         isbn = request.form["isbn"].strip()
-        url = f"https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}&key=AIzaSyA0wd2QZFr4TkN5iawyanmD2gIL_0Fdons"
+        url = f"https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}"
         response = requests.get(url)
         data = response.json()
 
